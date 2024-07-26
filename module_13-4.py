@@ -5,7 +5,7 @@ from aiogram.dispatcher import FSMContext
 import asyncio
 
 
-api = ''
+api = '7100837638:AAFH00gqytpiU6JKLVfdt6TrAAJDEg1GfI0'
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
@@ -16,7 +16,7 @@ class UserState(StatesGroup):
     weigth = State()
 
 
-@dp.message_handler(text=['Calories'])
+@dp.message_handler(commands=['Calories'])
 async def set_age(message):
     await message.answer('Введите свой возраст')
     await UserState.age.set()
